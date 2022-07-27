@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Product Page Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        h {
+            margin-left: 40%;
+            color: rgb(250, 165, 179);
+            font-size: xx-large;
+            letter-spacing: 8px;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: fixed;
+            background-color: #d0eaff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product {
+            width: 90%;
+            max-width: 750px;
+            display: flex;
+        }
+
+        .gallery {
+            flex-basis: 47%;
+            background: #f7c8dd;
+            transform: scale(1.08);
+            box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery img {
+            width: 100%;
+            display: block;
+            padding-top: 100px;
+            position: relative;
+        }
+
+        .details {
+            flex-basis: 53%;
+            background: #fff;
+            padding: 40px;
+            padding-left: 60px;
+            box-shadow: -10px 5px 10px 10px rgba(0, 0, 0, 0.1);
+
+            font-size: 13px;
+            font-weight: 500;
+            color: #777;
+        }
+
+        .details h1 {
+            color: #333;
+            font-size: 35px;
+        }
+
+        .details h2 {
+            color: red;
+            font-size: 30px;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+
+        .details h3 {
+            color: #00d874;
+            margin-bottom: 20px;
+        }
+
+        .details form {
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .size-select {
+            display: flex;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .size-select p {
+            width: 70px;
+        }
+
+        .size-select input:checked+span {
+            color: blue;
+            font-weight: 600;
+        }
+
+        .size-select input {
+            display: none;
+        }
+
+        .size-select span {
+            padding: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .color-select {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .color-select p {
+            width: 75PX;
+        }
+
+        .color-select span {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .color-1 {
+            background: red;
+        }
+
+        .color-2 {
+            background: greenyellow
+        }
+
+        .color-3 {
+            background: blue
+        }
+
+        .color-4 {
+            background: pink
+        }
+
+        .color-select input {
+            display: none;
+        }
+
+        .color-select input:checked+span {
+            transform: scale(0.8);
+            box-shadow: 0 0 0 4px #fff, 0 0 0 6px #000;
+        }
+
+        .quantity-select {
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .quantity-select p {
+            width: 75px;
+        }
+
+        .quantity-select input {
+            background: #eee;
+            border: 0;
+            outline: 0;
+            padding: 2px 2px 2px 15px;
+            width: 50px;
+            border-radius: 12px;
+        }
+
+        form button {
+            background: #553ff0;
+            color: #fff;
+            font-size: 17px;
+            width: 100%;
+            padding: 10px;
+            border-radius: 30px;
+            border: 0;
+            outline: 0;
+            margin-top: 50px;
+            box-shadow: 0 10px 10px rgba(85, 63, 240, 0.25);
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background: chartreuse
+        }
+
+        .controls {
+            position: absolute;
+            bottom: 40px;
+            right: 20px;
+        }
+
+        .btn {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            margin: 10px;
+            cursor: pointer;
+        }
+
+        .btn.active {
+            background: chartreuse
+        }
+    </style>
+</head>
+
+<body>
+    <h>Product Page Design</h>
+    <div class="container">
+
+        <div class="product">
+            <div class="gallery">
+                <img src="image1.png" id="productImg">
+                <div class="controls">
+                    <span class="btn active" onclick="change1()"></span>
+                    <span class="btn" onclick="change2()"></span>
+                    <span class="btn" onclick="change3()"></span>
+                </div>
+            </div>
+
+            <div class="details">
+                <h1> Casual T Shirt</h1>
+                <h2> $ 15.00 </h2>
+                <h3> 10% off </h3>
+                <p> Wrangler is an American manufacture of t-shirt and other clothing items,perticularly workwear.</p>
+
+                <form>
+                    <div class="size-select">
+                        <p>size </p>
+                        <label for="small">
+                            <input type="radio" name="size" id="small">
+                            <span>S</span>
+                        </label>
+                        <label for="medium">
+                            <input type="radio" name="size" id="medium">
+                            <span>M</span>
+                        </label>
+                        <label for="large">
+                            <input type="radio" name="size" id="large">
+                            <span>L</span>
+                        </label>
+                        <label for="x-large">
+                            <input type="radio" name="size" id="x-large">
+                            <span>XL</span>
+                        </label>
+                        <label for="xx-large">
+                            <input type="radio" name="size" id="xx-large">
+                            <span>XXL</span>
+                        </label>
+                    </div>
+
+                    <div class="color-select">
+                        <p>color</p>
+                        <label for="red">
+                            <input type="radio" name="color" id="red">
+                            <span class="color-1"></span>
+                        </label>
+                        <label for="green">
+                            <input type="radio" name="color" id="green">
+                            <span class="color-2"></span>
+                        </label>
+                        <label for="blue">
+                            <input type="radio" name="color" id="blue">
+                            <span class="color-3"></span>
+                        </label>
+                        <label for="pink">
+                            <input type="radio" name="color" id="pink">
+                            <span class="color-4"></span>
+                        </label>
+                    </div>
+
+
+                    <div class="quantity-select">
+                        <p>Quantity</p>
+                        <input type="number" class="quantity">
+                    </div>
+
+                    <button>Buy Now</button>
+            </div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        let productImg = document.getElementById("productImg");
+        let btn = document.getElementsByClassName("btn");
+
+        function change1() {
+            productImg.src = "image1.png"
+        }
+
+        function change2() {
+            productImg.src = "image2.png"
+        }
+
+        function change3() {
+            productImg.src = "image3.png"
+        }
+    </script>
+
+
+
+</body>
+
+</html>
